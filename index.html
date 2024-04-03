@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <title>Home - Nitin Jangir</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
@@ -42,7 +43,7 @@
                 furnished above is true to the best of my<br>
                 knowledge.
             </p>
-            <a href="./NitinJangirResume.pdf" class="btn" target="_blank">Download CV</a>
+            <a href="#" class="btn" target="_blank">Download CV</a>
         </div>
     </section>
     <!-- Home Section End -->
@@ -202,12 +203,13 @@
             <span>Connect With Us</span>
         </div>
         <div class="contact-form">
-            <form action="" method="post">
-                <input type="text" placeholder="Your Name">
-                <input type="email" name="" id="" placeholder="Your Email">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Write Message Here..."></textarea>
-                <input type="button" value="Send" class="contact-button">
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name">
+                <input type="email" id="email" placeholder="Your Email">
+                <textarea id="message" cols="30" rows="10" placeholder="Write Message Here..."></textarea>
+                <input type="submit" value="Send" class="contact-button">
             </form>
+            <div id="response"></div>
         </div>
     </section>
     <!-- Contact Section End -->
