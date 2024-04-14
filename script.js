@@ -34,7 +34,7 @@ $(document).on('submit', '#contactForm',function(event) {
   var message = $('#message').val();
   var textMessage = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
   
-  var phoneNumber = '917357819424';
+  var phoneNumber = '+917357819424';
   var whatsappLink = 'http://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(textMessage);
   window.location.href = whatsappLink;
 });
