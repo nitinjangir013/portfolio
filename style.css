@@ -12,10 +12,10 @@
 }
 
 :root {
-  --main-color: #033a80;
+  --main-color: #88624b;
   --bg-color: #fff;
   --text-color: #0f0c27;
-  --hover: hsl(260, 100%, 51%);
+  --hover: hsl(23, 30%, 55%);
   --big-font: 3.2rem;
   --medium-font: 1.8rem;
   --p-font: 0.941rem;
@@ -25,7 +25,8 @@ section {
   padding: 50px 10%;
 }
 
-body.active {
+body.active
+{
   --text-color: #fff;
   --bg-color: #0f0c27;
 }
@@ -82,7 +83,8 @@ header.shadow {
 .logo span {
   font-size: 1.61rem;
   font-weight: 600;
-  color: crimson;
+  /* color: crimson; */
+  color: var(--main-color);
 }
 
 .navbar {
@@ -250,7 +252,7 @@ span {
   left: 0;
   width: 100%;
   height: 0.5rem;
-  background: hsla(260, 100%, 44%, 0.4);
+  background: var(--main-color);
   border-radius: 0.5rem;
 }
 
@@ -323,7 +325,7 @@ span {
 }
 
 .services-box:hover {
-  background-color: #02225a;
+  background-color: var(--main-color);
 }
 
 .services-box h3 {
@@ -393,7 +395,7 @@ form textarea {
 .contact-button {
   width: 160px;
   cursor: pointer;
-  background: #2768d9;
+  background: var(--main-color);
   color: #fff;
   justify-content: center;
   text-transform: uppercase;
@@ -419,7 +421,7 @@ form textarea {
 }
 
 .footer-social a i {
-  color: rgb(10, 26, 208);
+  color: var(--main-color);
   font-size: 25px;
   margin-left: 10px;
   text-align: center;
@@ -428,6 +430,10 @@ form textarea {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+}
+.footer-social a i:hover
+{
+  color: var(--hover);
 }
 
 .copyright {
