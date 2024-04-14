@@ -25,3 +25,16 @@ darkmode.onclick = () => {
     document.body.classList.remove("active");
   }
 };
+
+
+$(document).on('submit', '#contactForm',function(event) {
+  event.preventDefault();
+  var name = $('#name').val();
+  var email = $('#email').val();
+  var message = $('#message').val();
+  var textMessage = 'Name: ' + name + '\nEmail: ' + email + '\nMessage: ' + message;
+  
+  var phoneNumber = '917357819424';
+  var whatsappLink = 'http://wa.me/' + phoneNumber + '?text=' + encodeURIComponent(textMessage);
+  window.location.href = whatsappLink;
+});
