@@ -1,1290 +1,1006 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Nitin Jangir - Full Stack Web Developer Portfolio. Modern 3D digital experiences."
-    />
-    <meta name="author" content="Nitin Jangir" />
-    <meta
-      name="keywords"
-      content="Nitin Jangir, Nitin Jangir Web Developer, Nitin Jangir Brijlalpura, Nitin Jangir Chirawa, Nitin Jangir Jhunjhunu, Nitin Jangir Sikar, Nitin Jangir portfolio, web developer, portfolio, projects, skills, Chirawa, Jhunjhunu, Rajasthan, RJ 18"
-    />
-    <meta property="og:title" content="Nitin Jangir" />
-    <meta
-      property="og:description"
-      content="Nitin Jangir - Full Stack Web Developer Portfolio. Modern 3D digital experiences."
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/115369751?s=48&v=4"
-    />
-    <meta
-      property="og:url"
-      content="https://nitinjangir013.github.io/portfolio"
-    />
-    <title>Nitin Jangir | Full Stack Developer</title>
 
-    <link
-      rel="shortcut icon"
-      href="./assets/imgs/myimage-nitinjangir.png"
-      type="image/x-icon"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Nitin Jangir - Full Stack Web Developer Portfolio. Modern 3D digital experiences." />
+  <meta name="author" content="Nitin Jangir" />
+  <meta name="keywords"
+    content="Nitin Jangir, Nitin Jangir Web Developer, Nitin Jangir Brijlalpura, Nitin Jangir Chirawa, Nitin Jangir Jhunjhunu, Nitin Jangir Sikar, Nitin Jangir portfolio, web developer, portfolio, projects, skills, Chirawa, Jhunjhunu, Rajasthan, RJ 18" />
+  <meta property="og:title" content="Nitin Jangir" />
+  <meta property="og:description"
+    content="Nitin Jangir - Full Stack Web Developer Portfolio. Modern 3D digital experiences." />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/115369751?s=48&v=4" />
+  <meta property="og:url" content="https://nitinjangir013.github.io/portfolio" />
+  <title>Nitin Jangir | Full Stack Developer</title>
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="shortcut icon" href="./assets/imgs/myimage-nitinjangir.png" type="image/x-icon" />
 
-    <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#6366f1",
-              secondary: "#4f46e5",
-              dark: "#0f172a",
-              card: "rgba(30, 41, 59, 0.7)",
-            },
-            fontFamily: {
-              outfit: ["Outfit", "sans-serif"],
-            },
+  <!-- Scripts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#6366f1",
+            secondary: "#4f46e5",
+            dark: "#0f172a",
+            card: "rgba(30, 41, 59, 0.7)",
+          },
+          fontFamily: {
+            outfit: ["Outfit", "sans-serif"],
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      * {
-        cursor: none !important;
-      }
-      body {
-        background-color: #0f172a;
-        color: #f8fafc;
-        overflow-x: hidden;
-        font-family: "Outfit", sans-serif;
-      }
-      .glass {
-        background: rgba(30, 41, 59, 0.4);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .text-gradient {
-        background: linear-gradient(to right, #818cf8, #c084fc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      #cursor-dot,
-      #cursor-outline {
-        pointer-events: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 9999;
-        transition:
-          opacity 0.3s ease-in-out,
-          transform 0.3s ease-in-out;
-      }
-      #cursor-dot {
-        width: 8px;
-        height: 8px;
-        background-color: #818cf8;
-      }
-      #cursor-outline {
-        width: 40px;
-        height: 40px;
-        border: 2px solid rgba(129, 140, 248, 0.5);
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -4px;
-        left: 0;
-        background-color: #818cf8;
-        transition: width 0.3s ease;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-      ::-webkit-scrollbar {
-        width: 8px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0f172a;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #1e293b;
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #334155;
-      }
-      canvas {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-      }
-      /* Enhanced Image Base Effect */
-      .img-base-platform {
-        position: absolute;
-        bottom: -20px;
-        left: 50%;
-        transform: translateX(-50%) rotateX(75deg);
-        width: 450px;
-        height: 450px;
-        background: radial-gradient(
-          circle,
+  <style>
+    * {
+      cursor: none !important;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      overflow-x: hidden;
+      font-family: "Outfit", sans-serif;
+    }
+
+    .glass {
+      background: rgba(30, 41, 59, 0.4);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .text-gradient {
+      background: linear-gradient(to right, #818cf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    #cursor-dot,
+    #cursor-outline {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      z-index: 9999;
+      transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
+    }
+
+    #cursor-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #818cf8;
+    }
+
+    #cursor-outline {
+      width: 40px;
+      height: 40px;
+      border: 2px solid rgba(129, 140, 248, 0.5);
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #818cf8;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Enhanced Image Base Effect */
+    .img-base-platform {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%) rotateX(75deg);
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle,
           rgba(99, 102, 241, 0.4) 0%,
           rgba(99, 102, 241, 0.1) 40%,
-          transparent 70%
-        );
-        border: 2px solid rgba(99, 102, 241, 0.2);
-        border-radius: 50%;
-        z-index: 1;
-        filter: blur(5px);
-        box-shadow: 0 0 50px rgba(99, 102, 241, 0.3);
-      }
-      .img-base-glow {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 200px;
-        height: 20px;
-        background: rgba(99, 102, 241, 0.6);
-        filter: blur(30px);
-        z-index: 2;
-        border-radius: 50%;
-      }
-    </style>
-  </head>
-  <body class="selection:bg-primary/30">
-    <!-- Custom Cursor -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-outline"></div>
+          transparent 70%);
+      border: 2px solid rgba(99, 102, 241, 0.2);
+      border-radius: 50%;
+      z-index: 1;
+      filter: blur(5px);
+      box-shadow: 0 0 50px rgba(99, 102, 241, 0.3);
+    }
 
-    <!-- Navigation -->
-    <nav
-      class="fixed top-0 left-0 w-full z-50 transition-all duration-300"
-      id="navbar"
-    >
-      <div
-        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <a href="#" class="text-2xl font-bold text-gradient">NJ</a>
+    .img-base-glow {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 20px;
+      background: rgba(99, 102, 241, 0.6);
+      filter: blur(30px);
+      z-index: 2;
+      border-radius: 50%;
+    }
+  </style>
+</head>
 
-        <div class="hidden md:flex space-x-8 items-center">
-          <a
-            href="#home"
-            class="nav-link relative text-sm font-medium hover:text-primary transition-colors"
-            >Home</a
-          >
-          <a
-            href="#about"
-            class="nav-link relative text-sm font-medium hover:text-primary transition-colors"
-            >About</a
-          >
-          <a
-            href="#service"
-            class="nav-link relative text-sm font-medium hover:text-primary transition-colors"
-            >Services</a
-          >
-          <a
-            href="#portfolio"
-            class="nav-link relative text-sm font-medium hover:text-primary transition-colors"
-            >Portfolio</a
-          >
-          <a
-            href="#blog"
-            class="nav-link relative text-sm font-medium hover:text-primary transition-colors"
-            >Blog</a
-          >
-          <a
-            href="#contact"
-            class="nav-link relative text-sm font-medium hover:text-primary transition-colors"
-            >Contact</a
-          >
-          <a
-            href="mailto:nitinjangir013@gmail.com"
-            class="px-6 py-2 bg-primary hover:bg-secondary text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/20"
-            >Contact Now</a
-          >
-        </div>
+<body class="selection:bg-primary/30">
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-outline"></div>
 
-        <!-- Mobile Menu Toggle -->
-        <button class="md:hidden text-2xl" id="menu-btn">
-          <i class="fa-solid fa-bars"></i>
-        </button>
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-gradient">NJ</a>
+
+      <div class="hidden md:flex space-x-8 items-center">
+        <a href="#home" class="nav-link relative text-sm font-medium hover:text-primary transition-colors">Home</a>
+        <a href="#about" class="nav-link relative text-sm font-medium hover:text-primary transition-colors">About</a>
+        <a href="#service"
+          class="nav-link relative text-sm font-medium hover:text-primary transition-colors">Services</a>
+        <a href="#portfolio"
+          class="nav-link relative text-sm font-medium hover:text-primary transition-colors">Portfolio</a>
+        <a href="#blog" class="nav-link relative text-sm font-medium hover:text-primary transition-colors">Blog</a>
+        <a href="#contact"
+          class="nav-link relative text-sm font-medium hover:text-primary transition-colors">Contact</a>
+        <a href="mailto:nitinjangir013@gmail.com"
+          class="px-6 py-2 bg-primary hover:bg-secondary text-white rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-primary/20">Contact
+          Now</a>
       </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section
-      id="home"
-      class="relative min-h-screen flex items-center justify-center pt-20"
-    >
-      <div id="hero-canvas-container" class="absolute inset-0 z-0"></div>
-      <div
-        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10"
-      >
-        <div class="space-y-6" id="hero-content">
-          <h6 class="text-primary font-semibold tracking-wider uppercase">
-            Hello, I'm
-          </h6>
-          <h1 class="text-5xl md:text-7xl font-bold leading-tight">
-            Nitin <span class="text-gradient">Jangir</span>
-          </h1>
-          <p class="text-xl text-slate-400 max-w-lg">
-            Full Stack Web Developer crafting high-performance, visually
-            stunning, and user-centric 3D digital experiences.
-          </p>
-          <div class="flex flex-wrap gap-4 items-center">
-            <a
-              href="mailto:nitinjangir013@gmail.com"
-              class="px-8 py-3 bg-primary hover:bg-secondary text-white rounded-xl transition-all font-semibold shadow-xl shadow-primary/20"
-              >HIRE ME</a
-            >
-            <a
-              href="./assets/files/Nitin-Jangir-24-03-2025.pdf"
-              target="_blank"
-              class="px-8 py-3 border border-slate-700 hover:border-primary rounded-xl transition-all font-semibold"
-              >DOWNLOAD CV</a
-            >
-          </div>
-          <div class="flex gap-6 text-2xl pt-4">
-            <a
-              href="https://codepen.io/nitinjangir-nj"
-              target="_blank"
-              class="text-slate-400 hover:text-primary transition-colors"
-              ><i class="fa-brands fa-codepen"></i
-            ></a>
-            <a
-              href="https://github.com/nitinjangir013"
-              target="_blank"
-              class="text-slate-400 hover:text-primary transition-colors"
-              ><i class="fa-brands fa-github"></i
-            ></a>
-            <a
-              href="https://www.linkedin.com/in/nitinjangir-nj"
-              target="_blank"
-              class="text-slate-400 hover:text-primary transition-colors"
-              ><i class="fa-brands fa-linkedin"></i
-            ></a>
-            <a
-              href="https://instagram.com/nitinjangir.nj"
-              target="_blank"
-              class="text-slate-400 hover:text-primary transition-colors"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-          </div>
-        </div>
-        <div class="relative hidden md:block" id="hero-img-container">
-          <div class="img-base-platform"></div>
-          <div class="img-base-glow"></div>
-          <img
-            src="./assets/imgs/my_image.png"
-            alt="Nitin Jangir"
-            class="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl border-b-[3px] border-primary"
-          />
-
-          <!-- Floating Info Cards -->
-          <div
-            class="glass absolute top-10 -left-10 p-4 rounded-2xl animate-bounce"
-            style="animation-duration: 3s; z-index: 20"
-          >
-            <h3 class="text-2xl font-bold text-gradient">126+</h3>
-            <p class="text-xs text-slate-400 font-medium">Happy Clients</p>
-          </div>
-          <div
-            class="glass absolute bottom-20 -right-10 p-4 rounded-2xl animate-bounce"
-            style="animation-duration: 4s; z-index: 20"
-          >
-            <h3 class="text-2xl font-bold text-gradient">150+</h3>
-            <p class="text-xs text-slate-400 font-medium">Projects Done</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-          <div class="relative group" id="about-img">
-            <div
-              class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
-            ></div>
-            <img
-              src="./assets/imgs/myimage-nitinjangir.png"
-              alt="Nitin Jangir"
-              class="relative rounded-2xl w-full max-w-md mx-auto"
-            />
-          </div>
-          <div class="space-y-6" id="about-content">
-            <h2 class="text-4xl font-bold">
-              About <span class="text-gradient">Me</span>
-            </h2>
-            <p class="text-lg text-slate-300">
-              I am a highly motivated and results-oriented professional with 2+
-              years of experience in Full Stack Web Development.
-            </p>
-            <p class="text-slate-400 leading-relaxed">
-              To work with an organization, wherein I can contribute my
-              knowledge and technical skills as well as continuously evolve to
-              attain higher level of excellence for self and the organization. I
-              specialize in crafting robust backend solutions and intuitive
-              front-end architectures.
-            </p>
-            <div class="grid md:grid-cols-2 gap-4">
-              <div class="glass p-4 rounded-xl">
-                <span class="text-primary font-bold">Experience:</span>
-                <span class="text-slate-300 ml-2">3+ Years</span>
-              </div>
-              <div class="glass p-4 rounded-xl">
-                <span class="text-primary font-bold">Location:</span>
-                <span class="text-slate-300 ml-2">India</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="service" class="py-24 bg-slate-900/50 relative z-10">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <h6 class="text-primary font-semibold mb-2">Service</h6>
-        <h2 class="text-4xl font-bold mb-12">
-          What I <span class="text-gradient">Do</span>
-        </h2>
-
-        <div
-          class="grid sm:grid-cols-2 md:grid-cols-4 gap-8"
-          id="services-grid"
-        >
-          <!-- Web Design -->
-          <div
-            class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group"
-          >
-            <div
-              class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform"
-            >
-              <i class="fa-solid fa-desktop"></i>
-            </div>
-            <h5 class="text-xl font-bold mb-4">Web Design</h5>
-            <p class="text-slate-400 text-sm">
-              Visually stunning and creative interfaces tailored to your brand.
-            </p>
-          </div>
-          <!-- UI/UX -->
-          <div
-            class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group"
-          >
-            <div
-              class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform"
-            >
-              <i class="fa-solid fa-crown"></i>
-            </div>
-            <h5 class="text-xl font-bold mb-4">UI/UX Design</h5>
-            <p class="text-slate-400 text-sm">
-              User-centered designs that ensure seamless and intuitive journeys.
-            </p>
-          </div>
-          <!-- Web Dev -->
-          <div
-            class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group"
-          >
-            <div
-              class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform"
-            >
-              <i class="fa-solid fa-code"></i>
-            </div>
-            <h5 class="text-xl font-bold mb-4">Web development</h5>
-            <p class="text-slate-400 text-sm">
-              High-performance coding using modern frameworks and tools.
-            </p>
-          </div>
-          <!-- Backend -->
-          <div
-            class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group"
-          >
-            <div
-              class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform"
-            >
-              <i class="fa-solid fa-database"></i>
-            </div>
-            <h5 class="text-xl font-bold mb-4">Backend development</h5>
-            <p class="text-slate-400 text-sm">
-              Robust and scalable server-side solutions for complex systems.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="py-24">
-      <div class="max-w-7xl mx-auto px-6" id="skills">
-        <div class="text-center mb-16">
-          <h6 class="text-primary font-semibold mb-2">My Skills</h6>
-          <h2 class="text-4xl font-bold">
-            Why Choose <span class="text-gradient">Me</span>
-          </h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
-          <!-- Skill Items -->
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>HTML 5</span><span class="text-primary">91%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 91%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>CSS 3</span><span class="text-primary">80%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 80%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>JavaScript</span><span class="text-primary">71%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 71%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>Php</span><span class="text-primary">70%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 70%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>Bootstrap</span><span class="text-primary">68%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 68%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>MY SQL</span><span class="text-primary">83%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 83%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>jQuery</span><span class="text-primary">62%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 62%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>WordPress</span><span class="text-primary">50%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 50%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>Webflow</span><span class="text-primary">41%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 41%"></div>
-            </div>
-          </div>
-          <div class="space-y-2">
-            <div class="flex justify-between font-semibold">
-              <span>Laravel</span><span class="text-primary">45%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-primary" style="width: 45%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24 bg-slate-900/30">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-          <h6 class="text-primary font-semibold mb-2">Portfolio</h6>
-          <h2 class="text-4xl font-bold">
-            Wonderful <span class="text-gradient">Works</span>
-          </h2>
-        </div>
-
-        <div
-          class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8"
-          id="portfolio-grid"
-        >
-          <!-- All 14 Projects -->
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/corporateking-website.png"
-              alt="Corporate king"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Corporate King</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="http://corporateking.in"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/trademark-lo-website.png"
-              alt="Trademark LO"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Trademark LO</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://trademarklo.com"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/dr-abhimanyu-singh-icoix.webp"
-              alt="Dr. Abhimanyu Singh"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Dr. Abhimanyu Singh</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://www.drabhimanyusingh.co.in"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/allied-health-plus-hospital-website-design.webp"
-              alt="Allied health plus"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Allied Health Plus</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://alliedhealthplushospital.com"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/homesolutionrepair-website.png"
-              alt="Home solution repair"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Home Solution Repair</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://homesolutionrepair.in"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/showgrid-website.png"
-              alt="ShowGrid"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">ShowGrid</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://project.mocaup.in/showgrid"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/petermyersvo-website.jpg"
-              alt="Peter Myersvo"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Peter Myersvo</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://petermyersvo.com"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/prasanya-website.webp"
-              alt="Prasanya"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Prasanya</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://prasanya.com"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/bds-entertainment.webp"
-              alt="BDS Entertainment"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">BDS Entertainment</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://bdsentertainment.in"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/jonzesi-website.png"
-              alt="Jonzesi"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Jonzesi</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://project.mocaup.in/jonzesi"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/manojborewell-website.jpg"
-              alt="Manoj Borewell"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Manoj Borewell</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://mb.mocaup.in"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/mocaup-webdesign-website.jpg"
-              alt="Mocaup Showcase"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Mocaup Showcase</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://mocaup.in/website-design"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/spyderauth-website.png"
-              alt="SpyderAuth"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">SpyderAuth Security</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://spyderauth.com"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-          <div
-            class="group relative rounded-3xl overflow-hidden glass aspect-video"
-          >
-            <img
-              src="./assets/imgs/pinseed-website.jpg"
-              alt="Pinseed"
-              class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8"
-            >
-              <h4 class="text-xl font-bold">Pinseed</h4>
-              <div class="flex gap-4 mt-2">
-                <a
-                  href="https://pineseed.in"
-                  target="_blank"
-                  rel="nofollow noopener noreferrer"
-                  class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                  ><i class="fa-solid fa-link"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-24">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <h6 class="text-primary font-semibold mb-2">My Blogs</h6>
-        <h2 class="text-4xl font-bold mb-16">
-          Latest <span class="text-gradient">Insights</span>
-        </h2>
-        <div class="grid md:grid-cols-3 gap-8 text-left">
-          <!-- Blogs -->
-          <div class="glass rounded-3xl overflow-hidden group">
-            <div class="overflow-hidden aspect-video">
-              <img
-                src="./assets/imgs/blog-1.jpeg"
-                alt="Blog"
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-              />
-            </div>
-            <div class="p-8 space-y-4">
-              <h5
-                class="text-xl font-bold group-hover:text-primary transition-colors"
-              >
-                Rise of No-Code Tools
-              </h5>
-              <p class="text-slate-400 text-sm line-clamp-3">
-                Explore the growing influence of no-code tools in web
-                development and how they empower creativity.
-              </p>
-              <a href="#" class="inline-block text-primary font-bold"
-                >Read More →</a
-              >
-            </div>
-          </div>
-          <div class="glass rounded-3xl overflow-hidden group">
-            <div class="overflow-hidden aspect-video">
-              <img
-                src="./assets/imgs/blog-2.jpeg"
-                alt="Blog"
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-              />
-            </div>
-            <div class="p-8 space-y-4">
-              <h5
-                class="text-xl font-bold group-hover:text-primary transition-colors"
-              >
-                2024 Design Trends
-              </h5>
-              <p class="text-slate-400 text-sm line-clamp-3">
-                Dive deep into the evolving landscape of front-end development
-                and accessibility.
-              </p>
-              <a href="#" class="inline-block text-primary font-bold"
-                >Read More →</a
-              >
-            </div>
-          </div>
-          <div class="glass rounded-3xl overflow-hidden group">
-            <div class="overflow-hidden aspect-video">
-              <img
-                src="./assets/imgs/blog-3.jpeg"
-                alt="Blog"
-                class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-              />
-            </div>
-            <div class="p-8 space-y-4">
-              <h5
-                class="text-xl font-bold group-hover:text-primary transition-colors"
-              >
-                SEO Mastery Guide
-              </h5>
-              <p class="text-slate-400 text-sm line-clamp-3">
-                Fundamentals of SEO to improve rankings and drive high-quality
-                organic traffic.
-              </p>
-              <a href="#" class="inline-block text-primary font-bold"
-                >Read More →</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Hire Me Banner -->
-    <section class="py-12">
-      <div class="max-w-7xl mx-auto px-6">
-        <div
-          class="bg-gradient-to-r from-primary to-purple-600 p-12 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between gap-8"
-        >
-          <div class="text-center md:text-left text-white">
-            <h3 class="text-3xl font-bold mb-2">Hire Me For Your Project</h3>
-            <p class="text-white/80 max-w-xl">
-              Looking for a developer who can bring your vision to life with
-              modern 3D tech? Let's build something amazing together.
-            </p>
-          </div>
-          <a
-            href="mailto:nitinjangir013@gmail.com"
-            class="px-10 py-4 bg-white text-primary font-bold rounded-2xl hover:scale-105 transition-transform shadow-xl"
-            >Hire Me Now!</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <h6 class="text-primary font-semibold mb-2">Contact</h6>
-        <h2 class="text-4xl font-bold mb-16">
-          Get In <span class="text-gradient">Touch</span>
-        </h2>
-        <div class="grid lg:grid-cols-2 gap-12 text-left">
-          <div class="glass p-10 rounded-[2.5rem]">
-            <form id="contactForm" class="space-y-6">
-              <div class="grid md:grid-cols-2 gap-6">
-                <input
-                  type="text"
-                  id="name"
-                  placeholder="Full Name"
-                  required
-                  class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-primary outline-none transition-all"
-                />
-                <input
-                  type="email"
-                  id="email"
-                  placeholder="Email Address"
-                  required
-                  class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-primary outline-none transition-all"
-                />
-              </div>
-              <textarea
-                id="message"
-                placeholder="Your Message"
-                rows="5"
-                required
-                class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-primary outline-none transition-all"
-              ></textarea>
-              <button
-                type="submit"
-                class="w-full py-4 bg-primary hover:bg-secondary text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-          <div class="space-y-8">
-            <div class="glass p-8 rounded-3xl flex items-center gap-6">
-              <div
-                class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl"
-              >
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div>
-                <h4 class="font-bold">Location</h4>
-                <p class="text-slate-400">Jhunjhunu, Rajasthan, India</p>
-              </div>
-            </div>
-            <!-- <div class="glass p-8 rounded-3xl flex items-center gap-6"><div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl"><i class="fa-solid fa-phone"></i></div><div><h4 class="font-bold">Phone</h4><p class="text-slate-400">+91 73578 19424</p></div></div> -->
-            <div class="glass p-8 rounded-3xl flex items-center gap-6">
-              <div
-                class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl"
-              >
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div>
-                <h4 class="font-bold">Email</h4>
-                <p class="text-slate-400">nitinjangir013@gmail.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Map -->
-    <div
-      class="w-full h-96 opacity-30 invert hover:opacity-50 transition-opacity grayscale"
-    >
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51431.01053367821!2d75.61808085053288!3d28.245131170474455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3913219fe9fbb61f%3A0x3dc782039a6d1539!2sChirawa%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1742835067802!5m2!1sen!2sin"
-        width="100%"
-        height="100%"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-      ></iframe>
+      <!-- Mobile Menu Toggle -->
+      <button class="md:hidden text-2xl" id="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
+  </nav>
 
-    <!-- Footer -->
-    <footer class="py-12 glass border-t-0 rounded-t-[3rem] mt-12">
-      <div
-        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400"
-      >
-        <p>
-          &copy; <span id="currentYear">0</span> Nitin Jangir. All rights
-          reserved.
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center justify-center pt-20">
+    <div id="hero-canvas-container" class="absolute inset-0 z-0"></div>
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center z-10">
+      <div class="space-y-6" id="hero-content">
+        <h6 class="text-primary font-semibold tracking-wider uppercase">
+          Hello, I'm
+        </h6>
+        <h1 class="text-5xl md:text-7xl font-bold leading-tight">
+          Nitin <span class="text-gradient">Jangir</span>
+        </h1>
+        <p class="text-xl text-slate-400 max-w-lg">
+          Full Stack Web Developer crafting high-performance, visually
+          stunning, and user-centric 3D digital experiences.
         </p>
-        <script>
-          document.addEventListener("DOMContentLoaded", (event) => {
-            const currentYearElement = document.getElementById("currentYear");
-            if (currentYearElement) {
-              currentYearElement.textContent = new Date().getFullYear();
-            }
-          });
-        </script>
-        <div class="flex gap-6 text-xl">
-          <a
-            href="https://github.com/nitinjangir013"
-            class="hover:text-white transition-colors"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a
-            href="https://www.linkedin.com/in/nitinjangir-nj"
-            class="hover:text-white transition-colors"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a
-            href="https://instagram.com/nitinjangir.nj"
-            class="hover:text-white transition-colors"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
+        <div class="flex flex-wrap gap-4 items-center">
+          <a href="mailto:nitinjangir013@gmail.com"
+            class="px-8 py-3 bg-primary hover:bg-secondary text-white rounded-xl transition-all font-semibold shadow-xl shadow-primary/20">HIRE
+            ME</a>
+          <a href="./assets/files/nitin_jangir-resume_25-04-2026.pdf" target="_blank"
+            class="px-8 py-3 border border-slate-700 hover:border-primary rounded-xl transition-all font-semibold">DOWNLOAD
+            CV</a>
+        </div>
+        <div class="flex gap-6 text-2xl pt-4">
+          <a href="https://codepen.io/nitinjangir-nj" target="_blank"
+            class="text-slate-400 hover:text-primary transition-colors"><i class="fa-brands fa-codepen"></i></a>
+          <a href="https://github.com/nitinjangir013" target="_blank"
+            class="text-slate-400 hover:text-primary transition-colors"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/nitinjangir-nj" target="_blank"
+            class="text-slate-400 hover:text-primary transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://instagram.com/nitinjangir.nj" target="_blank"
+            class="text-slate-400 hover:text-primary transition-colors"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
-    </footer>
+      <div class="relative hidden md:block" id="hero-img-container">
+        <div class="img-base-platform"></div>
+        <div class="img-base-glow"></div>
+        <img src="./assets/imgs/my_image.png" alt="Nitin Jangir"
+          class="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl border-b-[3px] border-primary" />
 
-    <!-- Three.js implementation -->
-    <script>
-      // Custom Cursor
-      const cursorDot = document.getElementById("cursor-dot");
-      const cursorOutline = document.getElementById("cursor-outline");
-      window.addEventListener("mousemove", (e) => {
-        cursorDot.style.left = `${e.clientX}px`;
-        cursorDot.style.top = `${e.clientY}px`;
-        cursorOutline.animate(
-          { left: `${e.clientX}px`, top: `${e.clientY}px` },
-          { duration: 500, fill: "forwards" },
-        );
-      });
+        <!-- Floating Info Cards -->
+        <div class="glass absolute top-10 -left-10 p-4 rounded-2xl animate-bounce"
+          style="animation-duration: 3s; z-index: 20">
+          <h3 class="text-2xl font-bold text-gradient">126+</h3>
+          <p class="text-xs text-slate-400 font-medium">Happy Clients</p>
+        </div>
+        <div class="glass absolute bottom-20 -right-10 p-4 rounded-2xl animate-bounce"
+          style="animation-duration: 4s; z-index: 20">
+          <h3 class="text-2xl font-bold text-gradient">150+</h3>
+          <p class="text-xs text-slate-400 font-medium">Projects Done</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      // Navbar Blur on Scroll
-      const navbar = document.getElementById("navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 20) {
-          navbar.classList.add("glass", "py-2");
-          navbar.classList.remove("py-4");
-        } else {
-          navbar.classList.remove("glass", "py-2");
-          navbar.classList.add("py-4");
-        }
-      });
+  <!-- About Section -->
+  <section id="about" class="py-24 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative group" id="about-img">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+          </div>
+          <img src="./assets/imgs/myimage-nitinjangir.png" alt="Nitin Jangir"
+            class="relative rounded-2xl w-full max-w-md mx-auto" />
+        </div>
+        <div class="space-y-6" id="about-content">
+          <h2 class="text-4xl font-bold">
+            About <span class="text-gradient">Me</span>
+          </h2>
+          <p class="text-lg text-slate-300">
+            I am a highly motivated and results-oriented professional with 2+
+            years of experience in Full Stack Web Development.
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            To work with an organization, wherein I can contribute my
+            knowledge and technical skills as well as continuously evolve to
+            attain higher level of excellence for self and the organization. I
+            specialize in crafting robust backend solutions and intuitive
+            front-end architectures.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="glass p-4 rounded-xl">
+              <span class="text-primary font-bold">Experience:</span>
+              <span class="text-slate-300 ml-2">3+ Years</span>
+            </div>
+            <div class="glass p-4 rounded-xl">
+              <span class="text-primary font-bold">Location:</span>
+              <span class="text-slate-300 ml-2">India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      // Hero Three.js Canvas
-      const container = document.getElementById("hero-canvas-container");
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        window.innerWidth / window.innerHeight,
-        0.1,
-        1000,
+  <!-- Services Section -->
+  <section id="service" class="py-24 bg-slate-900/50 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h6 class="text-primary font-semibold mb-2">Service</h6>
+      <h2 class="text-4xl font-bold mb-12">
+        What I <span class="text-gradient">Do</span>
+      </h2>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8" id="services-grid">
+        <!-- Web Design -->
+        <div
+          class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group">
+          <div
+            class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-desktop"></i>
+          </div>
+          <h5 class="text-xl font-bold mb-4">Web Design</h5>
+          <p class="text-slate-400 text-sm">
+            Visually stunning and creative interfaces tailored to your brand.
+          </p>
+        </div>
+        <!-- UI/UX -->
+        <div
+          class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group">
+          <div
+            class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h5 class="text-xl font-bold mb-4">UI/UX Design</h5>
+          <p class="text-slate-400 text-sm">
+            User-centered designs that ensure seamless and intuitive journeys.
+          </p>
+        </div>
+        <!-- Web Dev -->
+        <div
+          class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group">
+          <div
+            class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-code"></i>
+          </div>
+          <h5 class="text-xl font-bold mb-4">Web development</h5>
+          <p class="text-slate-400 text-sm">
+            High-performance coding using modern frameworks and tools.
+          </p>
+        </div>
+        <!-- Backend -->
+        <div
+          class="service-card glass p-8 rounded-3xl border border-white/10 hover:border-primary/50 transition-all duration-500 hover:-translate-y-2 group">
+          <div
+            class="w-20 h-20 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-4xl text-primary group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h5 class="text-xl font-bold mb-4">Backend development</h5>
+          <p class="text-slate-400 text-sm">
+            Robust and scalable server-side solutions for complex systems.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="py-24">
+    <div class="max-w-7xl mx-auto px-6" id="skills">
+      <div class="text-center mb-16">
+        <h6 class="text-primary font-semibold mb-2">My Skills</h6>
+        <h2 class="text-4xl font-bold">
+          Why Choose <span class="text-gradient">Me</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+        <!-- Skill Items -->
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>HTML 5</span><span class="text-primary">91%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 91%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>CSS 3</span><span class="text-primary">80%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>JavaScript</span><span class="text-primary">71%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 71%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>Php</span><span class="text-primary">70%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>Bootstrap</span><span class="text-primary">68%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 68%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>MY SQL</span><span class="text-primary">83%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 83%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>jQuery</span><span class="text-primary">62%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 62%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>WordPress</span><span class="text-primary">50%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 50%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>Webflow</span><span class="text-primary">41%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 41%"></div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between font-semibold">
+            <span>Laravel</span><span class="text-primary">45%</span>
+          </div>
+          <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
+            <div class="skill-bar h-full bg-primary" style="width: 45%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="py-24 bg-slate-900/30">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h6 class="text-primary font-semibold mb-2">Portfolio</h6>
+        <h2 class="text-4xl font-bold">
+          Wonderful <span class="text-gradient">Works</span>
+        </h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" id="portfolio-grid">
+        <!-- All 14 Projects -->
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/corporateking-website.png" alt="Corporate king"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Corporate King</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="http://corporateking.in" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/trademark-lo-website.png" alt="Trademark LO"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Trademark LO</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://trademarklo.com" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/dr-abhimanyu-singh-icoix.webp" alt="Dr. Abhimanyu Singh"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Dr. Abhimanyu Singh</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://www.drabhimanyusingh.co.in" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/allied-health-plus-hospital-website-design.webp" alt="Allied health plus"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Allied Health Plus</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://alliedhealthplushospital.com" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/homesolutionrepair-website.png" alt="Home solution repair"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Home Solution Repair</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://homesolutionrepair.in" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/showgrid-website.png" alt="ShowGrid"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">ShowGrid</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://project.mocaup.in/showgrid" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/petermyersvo-website.jpg" alt="Peter Myersvo"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Peter Myersvo</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://petermyersvo.com" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/prasanya-website.webp" alt="Prasanya"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Prasanya</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://prasanya.com" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/bds-entertainment.webp" alt="BDS Entertainment"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">BDS Entertainment</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://bdsentertainment.in" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/jonzesi-website.png" alt="Jonzesi"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Jonzesi</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://project.mocaup.in/jonzesi" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/manojborewell-website.jpg" alt="Manoj Borewell"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Manoj Borewell</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://mb.mocaup.in" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/mocaup-webdesign-website.jpg" alt="Mocaup Showcase"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Mocaup Showcase</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://mocaup.in/website-design" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/spyderauth-website.png" alt="SpyderAuth"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">SpyderAuth Security</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://spyderauth.com" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="group relative rounded-3xl overflow-hidden glass aspect-video">
+          <img src="./assets/imgs/pinseed-website.jpg" alt="Pinseed"
+            class="w-full h-full object-cover transition duration-500 group-hover:scale-110 opacity-70 group-hover:opacity-100" />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+            <h4 class="text-xl font-bold">Pinseed</h4>
+            <div class="flex gap-4 mt-2">
+              <a href="https://pineseed.in" target="_blank" rel="nofollow noopener noreferrer"
+                class="w-10 h-10 glass rounded-full flex items-center justify-center hover:bg-primary transition-colors"><i
+                  class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section id="blog" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h6 class="text-primary font-semibold mb-2">My Blogs</h6>
+      <h2 class="text-4xl font-bold mb-16">
+        Latest <span class="text-gradient">Insights</span>
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8 text-left">
+        <!-- Blogs -->
+        <div class="glass rounded-3xl overflow-hidden group">
+          <div class="overflow-hidden aspect-video">
+            <img src="./assets/imgs/blog-1.jpeg" alt="Blog"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+          </div>
+          <div class="p-8 space-y-4">
+            <h5 class="text-xl font-bold group-hover:text-primary transition-colors">
+              Rise of No-Code Tools
+            </h5>
+            <p class="text-slate-400 text-sm line-clamp-3">
+              Explore the growing influence of no-code tools in web
+              development and how they empower creativity.
+            </p>
+            <a href="#" class="inline-block text-primary font-bold">Read More →</a>
+          </div>
+        </div>
+        <div class="glass rounded-3xl overflow-hidden group">
+          <div class="overflow-hidden aspect-video">
+            <img src="./assets/imgs/blog-2.jpeg" alt="Blog"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+          </div>
+          <div class="p-8 space-y-4">
+            <h5 class="text-xl font-bold group-hover:text-primary transition-colors">
+              2024 Design Trends
+            </h5>
+            <p class="text-slate-400 text-sm line-clamp-3">
+              Dive deep into the evolving landscape of front-end development
+              and accessibility.
+            </p>
+            <a href="#" class="inline-block text-primary font-bold">Read More →</a>
+          </div>
+        </div>
+        <div class="glass rounded-3xl overflow-hidden group">
+          <div class="overflow-hidden aspect-video">
+            <img src="./assets/imgs/blog-3.jpeg" alt="Blog"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+          </div>
+          <div class="p-8 space-y-4">
+            <h5 class="text-xl font-bold group-hover:text-primary transition-colors">
+              SEO Mastery Guide
+            </h5>
+            <p class="text-slate-400 text-sm line-clamp-3">
+              Fundamentals of SEO to improve rankings and drive high-quality
+              organic traffic.
+            </p>
+            <a href="#" class="inline-block text-primary font-bold">Read More →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hire Me Banner -->
+  <section class="py-12">
+    <div class="max-w-7xl mx-auto px-6">
+      <div
+        class="bg-gradient-to-r from-primary to-purple-600 p-12 rounded-[2.5rem] flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="text-center md:text-left text-white">
+          <h3 class="text-3xl font-bold mb-2">Hire Me For Your Project</h3>
+          <p class="text-white/80 max-w-xl">
+            Looking for a developer who can bring your vision to life with
+            modern 3D tech? Let's build something amazing together.
+          </p>
+        </div>
+        <a href="mailto:nitinjangir013@gmail.com"
+          class="px-10 py-4 bg-white text-primary font-bold rounded-2xl hover:scale-105 transition-transform shadow-xl">Hire
+          Me Now!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-24">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h6 class="text-primary font-semibold mb-2">Contact</h6>
+      <h2 class="text-4xl font-bold mb-16">
+        Get In <span class="text-gradient">Touch</span>
+      </h2>
+      <div class="grid lg:grid-cols-2 gap-12 text-left">
+        <div class="glass p-10 rounded-[2.5rem]">
+          <form id="contactForm" class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <input type="text" id="name" placeholder="Full Name" required
+                class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-primary outline-none transition-all" />
+              <input type="email" id="email" placeholder="Email Address" required
+                class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-primary outline-none transition-all" />
+            </div>
+            <textarea id="message" placeholder="Your Message" rows="5" required
+              class="w-full bg-slate-800/50 border border-slate-700 p-4 rounded-xl focus:border-primary outline-none transition-all"></textarea>
+            <button type="submit"
+              class="w-full py-4 bg-primary hover:bg-secondary text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20">
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div class="space-y-8">
+          <div class="glass p-8 rounded-3xl flex items-center gap-6">
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Location</h4>
+              <p class="text-slate-400">Jhunjhunu, Rajasthan, India</p>
+            </div>
+          </div>
+          <!-- <div class="glass p-8 rounded-3xl flex items-center gap-6"><div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl"><i class="fa-solid fa-phone"></i></div><div><h4 class="font-bold">Phone</h4><p class="text-slate-400">+91 73578 19424</p></div></div> -->
+          <div class="glass p-8 rounded-3xl flex items-center gap-6">
+            <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-xl">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+              <h4 class="font-bold">Email</h4>
+              <p class="text-slate-400">nitinjangir013@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <div class="w-full h-96 opacity-30 invert hover:opacity-50 transition-opacity grayscale">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51431.01053367821!2d75.61808085053288!3d28.245131170474455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3913219fe9fbb61f%3A0x3dc782039a6d1539!2sChirawa%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1742835067802!5m2!1sen!2sin"
+      width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-12 glass border-t-0 rounded-t-[3rem] mt-12">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-slate-400">
+      <p>
+        &copy; <span id="currentYear">0</span> Nitin Jangir. All rights
+        reserved.
+      </p>
+      <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          const currentYearElement = document.getElementById("currentYear");
+          if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+          }
+        });
+      </script>
+      <div class="flex gap-6 text-xl">
+        <a href="https://github.com/nitinjangir013" class="hover:text-white transition-colors"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/nitinjangir-nj" class="hover:text-white transition-colors"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://instagram.com/nitinjangir.nj" class="hover:text-white transition-colors"><i
+            class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Three.js implementation -->
+  <script>
+    // Custom Cursor
+    const cursorDot = document.getElementById("cursor-dot");
+    const cursorOutline = document.getElementById("cursor-outline");
+    window.addEventListener("mousemove", (e) => {
+      cursorDot.style.left = `${e.clientX}px`;
+      cursorDot.style.top = `${e.clientY}px`;
+      cursorOutline.animate(
+        { left: `${e.clientX}px`, top: `${e.clientY}px` },
+        { duration: 500, fill: "forwards" },
       );
-      const renderer = new THREE.WebGLRenderer({
-        alpha: true,
-        antialias: true,
-      });
+    });
+
+    // Navbar Blur on Scroll
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add("glass", "py-2");
+        navbar.classList.remove("py-4");
+      } else {
+        navbar.classList.remove("glass", "py-2");
+        navbar.classList.add("py-4");
+      }
+    });
+
+    // Hero Three.js Canvas
+    const container = document.getElementById("hero-canvas-container");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000,
+    );
+    const renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true,
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    container.appendChild(renderer.domElement);
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
-      container.appendChild(renderer.domElement);
-      window.addEventListener("resize", () => {
-        camera.aspect = window.innerWidth / window.innerHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Animated Geometry
+    const mesh = new THREE.Mesh(
+      new THREE.IcosahedronGeometry(2, 0),
+      new THREE.MeshPhongMaterial({
+        color: 0x818cf8,
+        wireframe: true,
+        emissive: 0x4f46e5,
+        emissiveIntensity: 0.5,
+        transparent: true,
+        opacity: 0.4,
+      }),
+    );
+    scene.add(mesh);
+
+    // Background Particles
+    const particlesGeometry = new THREE.BufferGeometry();
+    const posArray = new Float32Array(1000 * 3);
+    for (let i = 0; i < 3000; i++) {
+      posArray[i] = (Math.random() - 0.5) * 15;
+    }
+    particlesGeometry.setAttribute(
+      "position",
+      new THREE.BufferAttribute(posArray, 3),
+    );
+    const particlesMesh = new THREE.Points(
+      particlesGeometry,
+      new THREE.PointsMaterial({
+        size: 0.005,
+        color: 0x818cf8,
+        transparent: true,
+        opacity: 0.8,
+      }),
+    );
+    scene.add(particlesMesh);
+
+    // Lighting
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(2, 2, 5);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040));
+    camera.position.z = 5;
+
+    // Interaction
+    let mouseX = 0,
+      mouseY = 0;
+    window.addEventListener("mousemove", (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    function animate() {
+      requestAnimationFrame(animate);
+      mesh.rotation.x += 0.005;
+      mesh.rotation.y += 0.005;
+      gsap.to(mesh.position, {
+        x: mouseX * 0.5,
+        y: -mouseY * 0.5,
+        duration: 2,
       });
+      particlesMesh.rotation.y += 0.001;
+      renderer.render(scene, camera);
+    }
+    animate();
 
-      // Animated Geometry
-      const mesh = new THREE.Mesh(
-        new THREE.IcosahedronGeometry(2, 0),
-        new THREE.MeshPhongMaterial({
-          color: 0x818cf8,
-          wireframe: true,
-          emissive: 0x4f46e5,
-          emissiveIntensity: 0.5,
-          transparent: true,
-          opacity: 0.4,
-        }),
-      );
-      scene.add(mesh);
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from("#hero-content > *", {
+      y: 50,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power2.out",
+    });
+    gsap.from("#hero-img-container", {
+      scale: 0.8,
+      opacity: 0,
+      duration: 1.5,
+      ease: "elastic.out(1, 0.3)",
+    });
 
-      // Background Particles
-      const particlesGeometry = new THREE.BufferGeometry();
-      const posArray = new Float32Array(1000 * 3);
-      for (let i = 0; i < 3000; i++) {
-        posArray[i] = (Math.random() - 0.5) * 15;
-      }
-      particlesGeometry.setAttribute(
-        "position",
-        new THREE.BufferAttribute(posArray, 3),
-      );
-      const particlesMesh = new THREE.Points(
-        particlesGeometry,
-        new THREE.PointsMaterial({
-          size: 0.005,
-          color: 0x818cf8,
-          transparent: true,
-          opacity: 0.8,
-        }),
-      );
-      scene.add(particlesMesh);
+    // Scroll Animations
+    gsap.from("#about-img", {
+      scrollTrigger: "#about",
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    });
+    gsap.from("#about-content", {
+      scrollTrigger: "#about",
+      x: 100,
+      opacity: 0,
+      duration: 1,
+    });
 
-      // Lighting
-      const light = new THREE.DirectionalLight(0xffffff, 1);
-      light.position.set(2, 2, 5);
-      scene.add(light);
-      scene.add(new THREE.AmbientLight(0x404040));
-      camera.position.z = 5;
+    // Fixed Services Animation - Ensure visibility
+    gsap.from(".service-card", {
+      scrollTrigger: {
+        trigger: "#service",
+        start: "top 80%",
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.1,
+      clearProps: "all", // Important: Clear styles after animation to ensure layout is correct
+    });
 
-      // Interaction
-      let mouseX = 0,
-        mouseY = 0;
-      window.addEventListener("mousemove", (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-        mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+    gsap.from(".skill-bar", {
+      scrollTrigger: "#skills",
+      width: 0,
+      duration: 1.5,
+      ease: "power4.out",
+      stagger: 0.1,
+    });
+    gsap.from("#portfolio .glass", {
+      scrollTrigger: "#portfolio",
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.05,
+    });
+
+    // WhatsApp Redirect
+    document
+      .getElementById("contactForm")
+      ?.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+        const textMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
+        const phoneNumber = "+917357819424";
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textMessage)}`;
+        window.location.href = whatsappLink;
       });
+  </script>
+</body>
 
-      function animate() {
-        requestAnimationFrame(animate);
-        mesh.rotation.x += 0.005;
-        mesh.rotation.y += 0.005;
-        gsap.to(mesh.position, {
-          x: mouseX * 0.5,
-          y: -mouseY * 0.5,
-          duration: 2,
-        });
-        particlesMesh.rotation.y += 0.001;
-        renderer.render(scene, camera);
-      }
-      animate();
-
-      // GSAP Animations
-      gsap.registerPlugin(ScrollTrigger);
-      gsap.from("#hero-content > *", {
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power2.out",
-      });
-      gsap.from("#hero-img-container", {
-        scale: 0.8,
-        opacity: 0,
-        duration: 1.5,
-        ease: "elastic.out(1, 0.3)",
-      });
-
-      // Scroll Animations
-      gsap.from("#about-img", {
-        scrollTrigger: "#about",
-        x: -100,
-        opacity: 0,
-        duration: 1,
-      });
-      gsap.from("#about-content", {
-        scrollTrigger: "#about",
-        x: 100,
-        opacity: 0,
-        duration: 1,
-      });
-
-      // Fixed Services Animation - Ensure visibility
-      gsap.from(".service-card", {
-        scrollTrigger: {
-          trigger: "#service",
-          start: "top 80%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        clearProps: "all", // Important: Clear styles after animation to ensure layout is correct
-      });
-
-      gsap.from(".skill-bar", {
-        scrollTrigger: "#skills",
-        width: 0,
-        duration: 1.5,
-        ease: "power4.out",
-        stagger: 0.1,
-      });
-      gsap.from("#portfolio .glass", {
-        scrollTrigger: "#portfolio",
-        scale: 0.9,
-        opacity: 0,
-        duration: 0.8,
-        stagger: 0.05,
-      });
-
-      // WhatsApp Redirect
-      document
-        .getElementById("contactForm")
-        ?.addEventListener("submit", function (event) {
-          event.preventDefault();
-          const name = document.getElementById("name").value;
-          const email = document.getElementById("email").value;
-          const message = document.getElementById("message").value;
-          const textMessage = `Name: ${name}\nEmail: ${email}\nMessage: ${message}`;
-          const phoneNumber = "+917357819424";
-          const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(textMessage)}`;
-          window.location.href = whatsappLink;
-        });
-    </script>
-  </body>
 </html>
